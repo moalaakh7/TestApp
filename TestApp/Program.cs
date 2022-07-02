@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-JasonManger.SetJeson();
-builder.Services.AddDbContextPool<Context>(options => options.UseSqlServer(JasonManger.GetConnectionString()));
+JsonManger.SetJeson();
+builder.Services.AddDbContextPool<Context>(options => options.UseSqlServer(JsonManger.GetConnectionString()));
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 var app = builder.Build();
@@ -21,7 +21,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-FCM.ServerKey = JasonManger.GetStringSection("ServerToken");
+FCM.ServerKey = JsonManger.GetStringSection("ServerToken");
 var context = Context.GetNew();
 
 //await context.Database.EnsureDeletedAsync();

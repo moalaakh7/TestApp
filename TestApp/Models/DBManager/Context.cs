@@ -17,7 +17,7 @@ namespace TestApp.Models.DBManager
         public static Context GetNew()
         {
             dbBuilder = new DbContextOptionsBuilder<Context>();
-            dbBuilder.UseSqlServer(JasonManger.GetConnectionString());
+            dbBuilder.UseSqlServer(JsonManger.GetConnectionString());
             return new Context(dbBuilder.Options);
         }
 

@@ -5,7 +5,7 @@ using System.IO;
 
 namespace TestApp.Utils
 {
-    public class JasonManger
+    public class JsonManger
     {
         static IConfigurationRoot? configuration;
         public static void SetJeson()
