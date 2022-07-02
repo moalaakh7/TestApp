@@ -3,17 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Create User</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body class="container">
-    <h1>Welcome To Test App</h1>
-    <ul>
-        <li><a href="~/User/CreateUser" target="_blank">Create User</a></li>
-        <li><a href="~/Notification/CreateNotification" target="_blank">Create Notification</a></li>
-        <li><a href="~/Notification/GetNotifications" target="_blank">Display all notifications</a></li>
-        <li><a href="~/Notification/SelectUser" target="_blank">Display notifications for a specific user</a></li>
-    </ul>
+    <h1>Enter User Info</h1>
+    <form method="post">
+        <label for="userid">Enter User Id</label>
+        <input type="number" required name="Id" class="form-control" />
+        <br />
+         <label for="userid">Enter User Token</label>
+        <input type="text" required name="Token" class="form-control" />
+        <br />
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>

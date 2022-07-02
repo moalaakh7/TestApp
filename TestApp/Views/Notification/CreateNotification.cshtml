@@ -1,0 +1,42 @@
+﻿@using TestApp.Models.Enum
+@model List<TestApp.Models.User>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Notification</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+   <body class="container">
+    <h1>Create Notification</h1>
+    <form method="post" enctype="multipart/form-data">
+        <select class="form-control" name="UserId">
+            <option value="0">All Users</option>
+            @foreach (var item in Model)
+            {
+                <option value="@item.Id">@item.Id</option>
+            }
+        </select>
+        <br />
+        <label>Enter Title</label>
+        <input type="text" required name="Title" class="form-control" />
+        <br />
+        <label>Enter Content</label>
+        <input type="text" required name="Content" class="form-control" />
+        <br />
+        <label>Upload Image</label>
+        <input type="file" required name="file" class="form-control" />
+        <br />
+        <select class="form-control" name="NotificationType">
+            @foreach (var item in Enum.GetValues(typeof(NotificationType)).Cast<NotificationType>())
+            {
+                <option value="@item">@item</option>
+            }
+        </select>
+        <br />
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

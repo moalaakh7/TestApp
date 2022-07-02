@@ -21,7 +21,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-
+FCM.ServerKey = JasonManger.GetStringSection("ServerToken");
 var context = Context.GetNew();
 
 //await context.Database.EnsureDeletedAsync();

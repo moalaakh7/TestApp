@@ -21,8 +21,9 @@ namespace TestApp.Models.DBManager
             return new Context(dbBuilder.Options);
         }
 
-        
-         
+        public DbSet<User> Users { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             var cascadeFKs = modelBuilder.Model.GetEntityTypes().SelectMany(t => t.GetForeignKeys())
